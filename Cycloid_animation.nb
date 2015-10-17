@@ -1,0 +1,872 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     34671,        863]
+NotebookOptionsPosition[     33785,        826]
+NotebookOutlinePosition[     34162,        843]
+CellTagsIndexPosition[     34119,        840]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["    "], "Input",
+ CellChangeTimes->{
+  3.6538075905594683`*^9, 3.653807644169951*^9, {3.6538076996812468`*^9, 
+   3.653807708751995*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Epicycloid", "Subtitle",
+ CellChangeTimes->{{3.653785339289279*^9, 3.6537853626819*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.007", "]"}], ",", 
+       RowBox[{"PointSize", "[", "0.013", "]"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0", ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"Circle", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "1"}], "]"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"Line", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"RotationMatrix", "[", 
+             RowBox[{"t", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                FractionBox["1", "radius"]}], ")"}]}], "]"}], ".", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "radius"}], ",", "0"}], "}"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "+", "radius"}], ")"}], " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", "t", "]"}], ",", 
+              RowBox[{"Sin", "[", "t", "]"}]}], "}"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "\[Theta]", ",", 
+            FractionBox["\[Pi]", "100"]}], "}"}]}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0", ",", ".8", ",", "0"}], "]"}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{"showCircle", ",", 
+         RowBox[{"Rotate", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Translate", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Circle", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", "radius"}], "]"}], 
+                ",", 
+                RowBox[{"Line", "[", 
+                 RowBox[{"radius", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"RGBColor", "[", 
+                 RowBox[{".8", ",", ".5", ",", "0"}], "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "radius"}], ",", "0"}], "}"}], "]"}]}], "}"}],
+               ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"1", "+", "radius"}], ")"}], 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+                 RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}]}], "]"}], 
+            "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"\[Theta]", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              FractionBox["1", "radius"]}], ")"}]}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "+", "radius"}], ")"}], " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+              RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}]}], "]"}], ",", 
+         
+         RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"500", ",", "375"}], "}"}]}], ",", 
+     RowBox[{"Axes", "\[Rule]", "showAxes"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{"2", "\[Pi]"}], ",", "\"\<position\>\""}], "}"}], ",", "0", 
+     ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"radius", ",", 
+       RowBox[{"1", "/", "3"}], ",", "\"\<ratio of radii\>\""}], "}"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"1", "/", "j"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showCircle", ",", "True", ",", "\"\<show green circle\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showAxes", ",", "None", ",", "\"\<show axes\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "Automatic"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.653730441287573*^9, 3.653730591699399*^9}, 
+   3.6537306465895576`*^9, {3.653730737619413*^9, 3.6537307677118998`*^9}, {
+   3.653730869048423*^9, 3.653730890230236*^9}, {3.6537446440212584`*^9, 
+   3.65374498638793*^9}, {3.653745017680702*^9, 3.653745215880103*^9}, {
+   3.653745794542933*^9, 3.6537459926281223`*^9}, {3.654055954614258*^9, 
+   3.654055975571158*^9}, {3.6540562666304617`*^9, 3.654056288415779*^9}, {
+   3.654056331063821*^9, 3.654056429825286*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`radius$$ = Rational[
+    1, 3], $CellContext`showAxes$$ = Automatic, $CellContext`showCircle$$ = 
+    True, $CellContext`\[Theta]$$ = 2 Pi, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 2 Pi, "position"}, 0, 2 Pi}, {{
+       Hold[$CellContext`radius$$], 
+       Rational[1, 3], "ratio of radii"}, {1, 
+       Rational[1, 2], 
+       Rational[1, 3], 
+       Rational[1, 4], 
+       Rational[1, 5], 
+       Rational[1, 6], 
+       Rational[1, 7], 
+       Rational[1, 8], 
+       Rational[1, 9], 
+       Rational[1, 10]}}, {{
+       Hold[$CellContext`showCircle$$], True, "show green circle"}, {
+      True, False}}, {{
+       Hold[$CellContext`showAxes$$], None, "show axes"}, {None, Automatic}}},
+     Typeset`size$$ = {750., {276., 287.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Theta]$841$$ = 0, $CellContext`radius$842$$ = 
+    0, $CellContext`showCircle$843$$ = False, $CellContext`showAxes$844$$ = 
+    False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`radius$$ = 
+        Rational[1, 3], $CellContext`showAxes$$ = 
+        None, $CellContext`showCircle$$ = True, $CellContext`\[Theta]$$ = 
+        2 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$841$$, 0], 
+        Hold[$CellContext`radius$$, $CellContext`radius$842$$, 0], 
+        Hold[$CellContext`showCircle$$, $CellContext`showCircle$843$$, False], 
+        Hold[$CellContext`showAxes$$, $CellContext`showAxes$844$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[{
+         Thickness[0.007], 
+         PointSize[0.013], 
+         RGBColor[0, 0, 0], 
+         Circle[{0, 0}, 1], 
+         RGBColor[1, 0, 0], 
+         Line[
+          Table[Dot[
+             
+             RotationMatrix[$CellContext`t (1 + 
+               1/$CellContext`radius$$)], {-$CellContext`radius$$, 0}] + (
+             1 + $CellContext`radius$$) {
+              Cos[$CellContext`t], 
+              Sin[$CellContext`t]}, {$CellContext`t, 
+            0, $CellContext`\[Theta]$$, Pi/100}]], 
+         RGBColor[0, 0.8, 0], 
+         If[$CellContext`showCircle$$, 
+          Rotate[{
+            Translate[{
+              Circle[{0, 0}, $CellContext`radius$$], 
+              Line[$CellContext`radius$$ {{-1, 0}, {1, 0}}], 
+              RGBColor[0.8, 0.5, 0], 
+              Point[{-$CellContext`radius$$, 0}]}, (
+              1 + $CellContext`radius$$) {
+               Cos[$CellContext`\[Theta]$$], 
+               Sin[$CellContext`\[Theta]$$]}]}, $CellContext`\[Theta]$$ (1 + 
+            1/$CellContext`radius$$), (1 + $CellContext`radius$$) {
+             Cos[$CellContext`\[Theta]$$], 
+             Sin[$CellContext`\[Theta]$$]}], {}]}, 
+        PlotRange -> {{-(1.2 + 2 + $CellContext`radius$$), 1.2 + 
+           2 + $CellContext`radius$$}, {-(1.2 + 2 + $CellContext`radius$$), 
+           1.2 + 2 + $CellContext`radius$$}}, ImageSize -> {500, 375}, 
+        Axes -> $CellContext`showAxes$$], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 2 Pi, "position"}, 0, 2 
+         Pi}, {{$CellContext`radius$$, 
+          Rational[1, 3], "ratio of radii"}, {1, 
+          Rational[1, 2], 
+          Rational[1, 3], 
+          Rational[1, 4], 
+          Rational[1, 5], 
+          Rational[1, 6], 
+          Rational[1, 7], 
+          Rational[1, 8], 
+          Rational[1, 9], 
+          Rational[1, 10]}}, {{$CellContext`showCircle$$, True, 
+          "show green circle"}, {
+         True, False}}, {{$CellContext`showAxes$$, None, "show axes"}, {
+         None, Automatic}}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{814., {394., 401.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.653745219583352*^9, {3.653745801744245*^9, 3.653745836529655*^9}, 
+   3.653745870894866*^9, {3.653745906396603*^9, 3.65374599390696*^9}, 
+   3.6540562919652233`*^9, {3.654056367620262*^9, 3.654056393150095*^9}, 
+   3.654056431184043*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Hypocycloid", "Subtitle",
+ CellChangeTimes->{{3.653785375841015*^9, 3.653785389971678*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.007", "]"}], ",", 
+       RowBox[{"PointSize", "[", "0.013", "]"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0", ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"Circle", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "1"}], "]"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"Line", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"RotationMatrix", "[", 
+             RowBox[{"t", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", 
+                FractionBox["1", "radius"]}], ")"}]}], "]"}], ".", 
+            RowBox[{"{", 
+             RowBox[{"radius", ",", "0"}], "}"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "radius"}], ")"}], " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", "t", "]"}], ",", 
+              RowBox[{"Sin", "[", "t", "]"}]}], "}"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "\[Theta]", ",", 
+            FractionBox["\[Pi]", "100"]}], "}"}]}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0", ",", ".8", ",", "0"}], "]"}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{"showCircle", ",", 
+         RowBox[{"Rotate", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Translate", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Circle", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", "radius"}], "]"}], 
+                ",", 
+                RowBox[{"Line", "[", 
+                 RowBox[{"radius", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"RGBColor", "[", 
+                 RowBox[{".8", ",", ".5", ",", "0"}], "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"radius", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"1", "-", "radius"}], ")"}], 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+                 RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}]}], "]"}], 
+            "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"\[Theta]", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              FractionBox["1", "radius"]}], ")"}]}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "radius"}], ")"}], " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+              RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}]}], "]"}], ",", 
+         
+         RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"500", ",", "375"}], "}"}]}], ",", 
+     RowBox[{"Axes", "\[Rule]", "showAxes"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{"2", "\[Pi]"}], ",", "\"\<position\>\""}], "}"}], ",", "0", 
+     ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"radius", ",", 
+       RowBox[{"1", "/", "3"}], ",", "\"\<ratio of radii\>\""}], "}"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"1", "/", "j"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showCircle", ",", "True", ",", "\"\<show green circle\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showAxes", ",", "None", ",", "\"\<show axes\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "Automatic"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.653730441287573*^9, 3.653730591699399*^9}, 
+   3.6537306465895576`*^9, {3.653730737619413*^9, 3.6537307677118998`*^9}, {
+   3.653730869048423*^9, 3.653730890230236*^9}, {3.6537446440212584`*^9, 
+   3.65374498638793*^9}, {3.653745017680702*^9, 3.653745215880103*^9}, {
+   3.653745794542933*^9, 3.6537459926281223`*^9}, {3.653778132435375*^9, 
+   3.65377813318569*^9}, {3.653778166334456*^9, 3.653778173324801*^9}, {
+   3.653778279953443*^9, 3.653778298146078*^9}, {3.653778329663097*^9, 
+   3.653778348663742*^9}, 3.653785103479007*^9, 3.653785148736909*^9, {
+   3.6540564627788982`*^9, 3.6540564860329437`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`radius$$ = Rational[
+    1, 3], $CellContext`showAxes$$ = Automatic, $CellContext`showCircle$$ = 
+    True, $CellContext`\[Theta]$$ = 2 Pi, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 2 Pi, "position"}, 0, 2 Pi}, {{
+       Hold[$CellContext`radius$$], 
+       Rational[1, 3], "ratio of radii"}, {1, 
+       Rational[1, 2], 
+       Rational[1, 3], 
+       Rational[1, 4], 
+       Rational[1, 5], 
+       Rational[1, 6], 
+       Rational[1, 7], 
+       Rational[1, 8], 
+       Rational[1, 9], 
+       Rational[1, 10]}}, {{
+       Hold[$CellContext`showCircle$$], True, "show green circle"}, {
+      True, False}}, {{
+       Hold[$CellContext`showAxes$$], None, "show axes"}, {None, Automatic}}},
+     Typeset`size$$ = {750., {276., 287.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Theta]$959$$ = 0, $CellContext`radius$960$$ = 
+    0, $CellContext`showCircle$961$$ = False, $CellContext`showAxes$962$$ = 
+    False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`radius$$ = 
+        Rational[1, 3], $CellContext`showAxes$$ = 
+        None, $CellContext`showCircle$$ = True, $CellContext`\[Theta]$$ = 
+        2 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$959$$, 0], 
+        Hold[$CellContext`radius$$, $CellContext`radius$960$$, 0], 
+        Hold[$CellContext`showCircle$$, $CellContext`showCircle$961$$, False], 
+        Hold[$CellContext`showAxes$$, $CellContext`showAxes$962$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[{
+         Thickness[0.007], 
+         PointSize[0.013], 
+         RGBColor[0, 0, 0], 
+         Circle[{0, 0}, 1], 
+         RGBColor[1, 0, 0], 
+         Line[
+          Table[Dot[
+             
+             RotationMatrix[$CellContext`t (1 - 
+               1/$CellContext`radius$$)], {$CellContext`radius$$, 0}] + (
+             1 - $CellContext`radius$$) {
+              Cos[$CellContext`t], 
+              Sin[$CellContext`t]}, {$CellContext`t, 
+            0, $CellContext`\[Theta]$$, Pi/100}]], 
+         RGBColor[0, 0.8, 0], 
+         If[$CellContext`showCircle$$, 
+          Rotate[{
+            Translate[{
+              Circle[{0, 0}, $CellContext`radius$$], 
+              Line[$CellContext`radius$$ {{-1, 0}, {1, 0}}], 
+              RGBColor[0.8, 0.5, 0], 
+              Point[{$CellContext`radius$$, 0}]}, (1 - $CellContext`radius$$) {
+               Cos[$CellContext`\[Theta]$$], 
+               Sin[$CellContext`\[Theta]$$]}]}, $CellContext`\[Theta]$$ (1 - 
+            1/$CellContext`radius$$), (1 - $CellContext`radius$$) {
+             Cos[$CellContext`\[Theta]$$], 
+             Sin[$CellContext`\[Theta]$$]}], {}]}, 
+        PlotRange -> {{-(1.2 + 2 + $CellContext`radius$$), 1.2 + 
+           2 + $CellContext`radius$$}, {-(1.2 + 2 + $CellContext`radius$$), 
+           1.2 + 2 + $CellContext`radius$$}}, ImageSize -> {500, 375}, 
+        Axes -> $CellContext`showAxes$$], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 2 Pi, "position"}, 0, 2 
+         Pi}, {{$CellContext`radius$$, 
+          Rational[1, 3], "ratio of radii"}, {1, 
+          Rational[1, 2], 
+          Rational[1, 3], 
+          Rational[1, 4], 
+          Rational[1, 5], 
+          Rational[1, 6], 
+          Rational[1, 7], 
+          Rational[1, 8], 
+          Rational[1, 9], 
+          Rational[1, 10]}}, {{$CellContext`showCircle$$, True, 
+          "show green circle"}, {
+         True, False}}, {{$CellContext`showAxes$$, None, "show axes"}, {
+         None, Automatic}}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{814., {394., 401.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.653745219583352*^9, {3.653745801744245*^9, 3.653745836529655*^9}, 
+   3.653745870894866*^9, {3.653745906396603*^9, 3.65374599390696*^9}, 
+   3.6537781340955467`*^9, {3.653778168159686*^9, 3.653778173929018*^9}, {
+   3.653778281066513*^9, 3.653778299076868*^9}, {3.6537783319428787`*^9, 
+   3.6537783497508907`*^9}, 3.6537851095639963`*^9, 3.653785149899425*^9, {
+   3.654056465880039*^9, 3.654056487472941*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cycloid", "Subtitle",
+ CellChangeTimes->{{3.653785339289279*^9, 3.6537853626819*^9}, {
+  3.653785842519161*^9, 3.653785843865697*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.653786296275605*^9, 3.653786306121254*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Thickness", "[", "0.007", "]"}], ",", 
+         RowBox[{"PointSize", "[", "0.013", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "0"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"2", "\[Pi]"}], ",", "0"}], "}"}]}], "}"}], "]"}], ",", 
+         
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Line", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"radius", 
+               RowBox[{"(", 
+                RowBox[{"t", "-", 
+                 RowBox[{"Sin", "[", "t", "]"}]}], ")"}]}], ",", 
+              RowBox[{"radius", 
+               RowBox[{"(", 
+                RowBox[{"1", "-", 
+                 RowBox[{"Cos", "[", "t", "]"}]}], ")"}]}]}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "0", ",", "\[Theta]", ",", 
+              FractionBox["\[Pi]", "100"]}], "}"}]}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", ".8", ",", "0"}], "]"}], ",", 
+         RowBox[{"If", "[", 
+          RowBox[{"showCircle", ",", 
+           RowBox[{"Rotate", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"Translate", "[", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Circle", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "radius"}], "]"}], 
+                  ",", 
+                  RowBox[{"Line", "[", 
+                   RowBox[{"radius", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"-", "1"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{".8", ",", ".5", ",", "0"}], "]"}], ",", 
+                  RowBox[{"Point", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"-", "radius"}]}], "}"}], "]"}]}], "}"}], ",", 
+                RowBox[{
+                 RowBox[{"(", "radius", ")"}], 
+                 RowBox[{"{", 
+                  RowBox[{"\[Theta]", ",", "1"}], "}"}]}]}], "]"}], "}"}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{"-", "\[Theta]"}], ",", 
+             RowBox[{
+              RowBox[{"(", "radius", ")"}], " ", 
+              RowBox[{"{", 
+               RowBox[{"\[Theta]", ",", "1"}], "}"}]}]}], "]"}], ",", 
+           RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "\[Pi]"}], ",", "0"}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1.2", "+", "2", "+", "radius"}], ")"}]}], ",", 
+          RowBox[{"1.2", "+", "2", "+", "radius"}]}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"500", ",", "375"}], "}"}]}], ",", 
+     RowBox[{"Axes", "\[Rule]", "showAxes"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{"2", "\[Pi]"}], ",", "\"\<position\>\""}], "}"}], ",", "0", 
+     ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"radius", ",", "1"}], "}"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showCircle", ",", "True", ",", "\"\<show green circle\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showAxes", ",", "None", ",", "\"\<show axes\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "Automatic"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.653730441287573*^9, 3.653730591699399*^9}, 
+   3.6537306465895576`*^9, {3.653730737619413*^9, 3.6537307677118998`*^9}, {
+   3.653730869048423*^9, 3.653730890230236*^9}, {3.6537446440212584`*^9, 
+   3.65374498638793*^9}, {3.653745017680702*^9, 3.653745215880103*^9}, {
+   3.653745794542933*^9, 3.6537459926281223`*^9}, {3.653785925529275*^9, 
+   3.653785954888077*^9}, {3.653785996861341*^9, 3.6537859996463003`*^9}, {
+   3.653786086388229*^9, 3.653786179899584*^9}, {3.653786223388031*^9, 
+   3.653786265195463*^9}, {3.653786455129781*^9, 3.653786529129623*^9}, {
+   3.653793730814542*^9, 3.6537937347213373`*^9}, {3.653793843681823*^9, 
+   3.653793865647661*^9}, {3.6537939160982723`*^9, 3.6537939479660482`*^9}, {
+   3.653793995241314*^9, 3.653794004491066*^9}, {3.6537941234206963`*^9, 
+   3.653794161078123*^9}, {3.653794252788142*^9, 3.6537942600488243`*^9}, {
+   3.653794335667646*^9, 3.653794336689643*^9}, {3.653794372992784*^9, 
+   3.653794378081916*^9}, {3.653794412669791*^9, 3.653794465751205*^9}, {
+   3.653799424306161*^9, 3.6537995263955297`*^9}, {3.653799800617053*^9, 
+   3.653799815865259*^9}, {3.653799853872856*^9, 3.653799862601178*^9}, {
+   3.653799928035324*^9, 3.65379993562018*^9}, {3.6537999767288017`*^9, 
+   3.6537999829736643`*^9}, {3.653800057234723*^9, 3.653800075607564*^9}, {
+   3.653805167422937*^9, 3.653805171424856*^9}, {3.653805227985589*^9, 
+   3.653805240201166*^9}, {3.653805345860854*^9, 3.653805433390306*^9}, {
+   3.653805468612936*^9, 3.653805518256673*^9}, {3.6538057323043547`*^9, 
+   3.653805796342908*^9}, {3.653805854679838*^9, 3.653805861197164*^9}, {
+   3.654056492911974*^9, 3.654056499852458*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`radius$$ = 1, $CellContext`showAxes$$ = 
+    Automatic, $CellContext`showCircle$$ = True, $CellContext`\[Theta]$$ = 
+    2.7541528489907847`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 2 Pi, "position"}, 0, 2 Pi}, {{
+       Hold[$CellContext`radius$$], 1}}, {{
+       Hold[$CellContext`showCircle$$], True, "show green circle"}, {
+      True, False}}, {{
+       Hold[$CellContext`showAxes$$], None, "show axes"}, {None, Automatic}}},
+     Typeset`size$$ = {750., {276., 287.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Theta]$995$$ = 0, $CellContext`showCircle$996$$ = 
+    False, $CellContext`showAxes$997$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`radius$$ = 1, $CellContext`showAxes$$ = 
+        None, $CellContext`showCircle$$ = True, $CellContext`\[Theta]$$ = 
+        2 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$995$$, 0], 
+        Hold[$CellContext`showCircle$$, $CellContext`showCircle$996$$, False], 
+        Hold[$CellContext`showAxes$$, $CellContext`showAxes$997$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[
+        Translate[{
+          Thickness[0.007], 
+          PointSize[0.013], 
+          RGBColor[0, 0, 0], 
+          Line[{{0, 0}, {2 Pi, 0}}], 
+          RGBColor[1, 0, 0], 
+          Line[
+           
+           Table[{$CellContext`radius$$ ($CellContext`t - 
+              Sin[$CellContext`t]), $CellContext`radius$$ (1 - 
+              Cos[$CellContext`t])}, {$CellContext`t, 
+             0, $CellContext`\[Theta]$$, Pi/100}]], 
+          RGBColor[0, 0.8, 0], 
+          If[$CellContext`showCircle$$, 
+           Rotate[{
+             Translate[{
+               Circle[{0, 0}, $CellContext`radius$$], 
+               Line[$CellContext`radius$$ {{0, -1}, {0, 1}}], 
+               RGBColor[0.8, 0.5, 0], 
+               
+               Point[{0, -$CellContext`radius$$}]}, $CellContext`radius$$ \
+{$CellContext`\[Theta]$$, 
+                1}]}, -$CellContext`\[Theta]$$, $CellContext`radius$$ \
+{$CellContext`\[Theta]$$, 1}], {}]}, {-Pi, 0}], 
+        PlotRange -> {{-(1.2 + 2 + $CellContext`radius$$), 1.2 + 
+           2 + $CellContext`radius$$}, {-(1.2 + 2 + $CellContext`radius$$), 
+           1.2 + 2 + $CellContext`radius$$}}, ImageSize -> {500, 375}, 
+        Axes -> $CellContext`showAxes$$], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 2 Pi, "position"}, 0, 2 
+         Pi}, {{$CellContext`radius$$, 1}}, {{$CellContext`showCircle$$, True,
+           "show green circle"}, {
+         True, False}}, {{$CellContext`showAxes$$, None, "show axes"}, {
+         None, Automatic}}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{814., {410., 418.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.653805122833371*^9, 3.653805251265582*^9, 3.653805428121773*^9, {
+   3.653805476761339*^9, 3.6538055194022427`*^9}, 3.653805743328508*^9, 
+   3.6538058653783007`*^9, 3.6540565018131*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1032, 1425},
+WindowMargins->{{Automatic, 26}, {Automatic, 47}},
+Magnification->1.5,
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (August 26, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 151, 3, 40, "Input"],
+Cell[CellGroupData[{
+Cell[733, 27, 94, 1, 69, "Subtitle"],
+Cell[CellGroupData[{
+Cell[852, 32, 6030, 157, 597, "Input"],
+Cell[6885, 191, 4771, 105, 819, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11705, 302, 97, 1, 69, "Subtitle"],
+Cell[CellGroupData[{
+Cell[11827, 307, 6095, 156, 574, "Input"],
+Cell[17925, 465, 4928, 106, 819, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22902, 577, 140, 2, 69, "Subtitle"],
+Cell[23045, 581, 92, 1, 40, "Input"],
+Cell[CellGroupData[{
+Cell[23162, 586, 6757, 158, 507, "Input"],
+Cell[29922, 746, 3835, 76, 852, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
